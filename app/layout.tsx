@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import '@/app/ui/globals.css'
 import Navbar from './ui/navbar'
+import Footer from './ui/footer'
 
 export const metadata: Metadata = {
   title: 'JOJOS',
@@ -14,11 +15,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-br">
-      <body>
+      <body className=''>
         <Navbar />
-        <div className="container md:px-20 px-10 md:py-10 py-5">
+        <main className="container md:px-20 px-10 md:py-10 py-5">
           {children}
-        </div>
+        </main>
+        <Footer />
       </body>
     </html>
   )

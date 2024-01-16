@@ -1,11 +1,7 @@
-'use client';
-
 import { montserrat, press } from '@/app/ui/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
-import Button from '@/app/ui/button';
 import styles from '@/app/ui/button.module.css'
-import { redirect } from 'next/navigation';
 
 export default function Navbar() {
   return (
