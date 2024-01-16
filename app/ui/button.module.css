@@ -1,0 +1,7 @@
+.btn{
+    background-color: var(--sunrise);
+}
+
+.btn:hover{
+    background-color: var(--sunrise-hover);
+}
