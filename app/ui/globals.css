@@ -1,0 +1,27 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --midnight: #023047;
+  --sunrise: #FA8400;
+  --gray: #DFDFE4;
+  --white: #FFFFFF;
+}
+
+body {
+  background-color: var(--midnight);
+  margin: 0;
+}
+
+.font-sunrise{
+  color: var(--sunrise);
+}
+
+.font-gray{
+  color: var(--gray);
+}
+
+.font-white{
+  color: var(--white);
+}
