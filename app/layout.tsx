@@ -14,10 +14,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-br">
-      <body className=''>
+    <html lang="pt-br" className='scroll-smooth'>
+      <body>
         <Navbar />
-        <main className="container md:px-20 px-10 md:py-10 py-5">
+        <main className="md:px-20 px-5 md:py-10 py-5 w-full text-center">
           {children}
         </main>
         <Footer />

@@ -5,7 +5,7 @@ import styles from '@/app/ui/button.module.css'
 
 export default function Navbar() {
   return (
-    <nav className='md:flex px-20 py-5 md:justify-between w-full md:content-center'>
+    <nav className='md:flex md:px-20 px-5 py-5 md:justify-between w-full md:content-center'>
         <div id='logo' className='flex content-center md:justify-around flex-wrap-reverse justify-center'>
           <Image
               src="/Icon.png"
