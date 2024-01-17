@@ -11,8 +11,10 @@
   "dependencies": {
     "clsx": "^2.1.0",
     "next": "14.0.4",
+    "next-sanity": "^7.0.10",
     "react": "^18",
-    "react-dom": "^18"
+    "react-dom": "^18",
+    "sanity": "^3.25.0"
   },
   "devDependencies": {
     "@types/node": "^20",
