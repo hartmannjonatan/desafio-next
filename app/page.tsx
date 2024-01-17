@@ -2,6 +2,7 @@ import { montserrat, press } from '@/app/ui/fonts';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/app/ui/imagem-card.module.css'
+import CardCarreira from './ui/carreira/card-carreira';
 
 
 export default function Home() {
@@ -48,6 +49,16 @@ export default function Home() {
           <div>
             <Image alt='Imagem sobre nós' src={"/image-about_us.png"} width={560} height={689} />
           </div>
+        </div>
+      </div>
+      <div className="w-full mt-14 mb-8" id='carreira'>
+        <h1 className={`${press.className} font-sunrise w-full text-2xl`}>Carreira</h1>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-3">
+          <CardCarreira key={1} title='Desenvolvedor C++ Júnior' categories={["DEV", "Remoto"]} />
+          <CardCarreira key={2} title='Desenvolvedor C++ Pleno' categories={["DEV", "Remoto"]} />
+          <CardCarreira key={3} title='Engenheiro de Software' categories={["Engenheiro", "Remoto"]} />
+          <CardCarreira key={4} title='Artista Técnico' categories={["Artista", "Remoto"]} />
+          <CardCarreira key={5} title='Representante Comercial' categories={["Comercial", "Presencial"]} />
         </div>
       </div>
     </>

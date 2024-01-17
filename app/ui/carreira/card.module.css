@@ -1,0 +1,16 @@
+.card{
+    border: solid 2px var(--gray);
+}
+
+.card:hover, .card:hover .categories div{
+    border-color: var(--sunrise);
+}
+
+.card:hover h2, .card:hover .categories div{
+    color: var(--sunrise) !important;
+}
+
+.category{
+    border: solid 1px var(--gray);
+    border-radius: 5px;
+}
