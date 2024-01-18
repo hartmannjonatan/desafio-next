@@ -1,8 +1,9 @@
+import { Slug } from "sanity";
 
 export type PostType = {
   _id: string,
   author: string,
-  slug: string,
+  slug: Slug,
   mainImage: {
     alt: string,
     image: string
