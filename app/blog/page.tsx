@@ -11,14 +11,13 @@ import CardPost from '../ui/blog/card-post';
 export default async function Blog() {
   const posts: PostType[] = await getPost()
   const destaque: PostType | undefined = posts.pop()
-  console.log(destaque?.publishedAt)
   const date: string | undefined = destaque?.publishedAt.toString() != undefined ? new Date(destaque?.publishedAt.toString()).toLocaleDateString("BR") : undefined
   return (
     <>
       <h1 className={`${press.className} font-sunrise text-center w-full text-2xl`}>BLOG</h1>
       { destaque != undefined ?
         <div className="w-full mt-14" id='destaque'>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mt-3">
+          <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10 mt-3">
             <div className={`${image_style.card} w-full`}>
               <Link href={`/blog/${destaque.slug.current}`}><Image alt={destaque.mainImage.alt} src={destaque.mainImage.image} width={610} height={339} /></Link>
             </div>
@@ -32,7 +31,7 @@ export default async function Blog() {
           </div>
         </div>
       : <h2 className={`${montserrat.className} font-white font-bold text-xl`}>Não há posts cadastrados no momento.</h2>}
-      { posts.length > 1 ?
+      { posts.length > 0 ?
         <div className="w-full mt-14 mb-8" id='posts'>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5 mt-3">
             {posts.map((post, i) => {
