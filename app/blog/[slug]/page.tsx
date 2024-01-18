@@ -11,7 +11,7 @@ export default async function Post({ params }: { params: { slug: string } }) {
   const date: string | undefined = post.publishedAt.toString() != undefined ? new Date(post.publishedAt.toString()).toLocaleDateString("BR") : undefined
   return (
     <>
-      { post != undefined ?
+      { post != undefined && post != null?
         <div className="w-full mt-14 text-start" id='post'>
           <Image alt="Imagem do post" src={post.bannerImage.image} width={1240} height={368} />
           <h2 className={`${montserrat.className} font-bold text-center font-gray text-xl my-10`}>{post.title}</h2>

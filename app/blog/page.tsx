@@ -15,7 +15,7 @@ export default async function Blog() {
   return (
     <>
       <h1 className={`${press.className} font-sunrise text-center w-full text-2xl`}>BLOG</h1>
-      { destaque != undefined ?
+      { destaque != undefined && destaque != null?
         <div className="w-full mt-14" id='destaque'>
           <div className="grid grid-cols-1 md:grid-cols-2 md:gap-20 gap-10 mt-3">
             <div className={`${image_style.card} w-full`}>

@@ -13,7 +13,7 @@ export default async function Home() {
   return (
     <>
       <div className="text-center w-full" id='jogos'>
-        {destaque != undefined ?
+        {destaque != undefined && destaque != null?
           <div className={`${styles.card} w-full mb-5`} id='destaque'>
             <Link href={`/games/${destaque.slug.current}`}>
                 <Image alt={destaque.title} src={destaque.mainImage.image} width={1240} height={493}/>
