@@ -8,6 +8,10 @@ export type PostType = {
     alt: string,
     image: string
   },
+  bannerImage: {
+    alt: string,
+    image: string
+  },
   body: string,
   publishedAt: Date,
   title: string

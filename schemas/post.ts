@@ -33,6 +33,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'bannerImage',
+      title: 'Imagem banner post',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'publishedAt',
       title: 'Publicado em',
       type: 'date',

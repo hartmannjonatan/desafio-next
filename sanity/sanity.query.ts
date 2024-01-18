@@ -8,10 +8,27 @@ export async function getPost() {
       author,
       body,
       mainImage {alt, "image": asset->url},
+      bannerImage {alt, "image": asset->url},
       publishedAt,
       slug,
       title
     }`
+  );
+}
+
+export async function getSinglePost(slug: string) {
+  return client.fetch(
+    groq`*[_type == "post" && slug.current == $slug][0]{
+      _id,
+      author,
+      body,
+      mainImage {alt, "image": asset->url},
+      bannerImage {alt, "image": asset->url},
+      publishedAt,
+      slug,
+      title
+    }`,
+    { slug }
   );
 }
 
