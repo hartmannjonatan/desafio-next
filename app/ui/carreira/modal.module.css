@@ -1,0 +1,21 @@
+.modal{
+    background-color: var(--gray);
+}
+
+.fadeOut {
+    opacity: 1;
+    animation: fadeOut 3s forwards; /* 3s é a duração da animação */
+  }
+  
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.animated {
+    animation-delay: 1s; /* Adiciona um atraso de 1 segundo antes de iniciar a animação */
+}
