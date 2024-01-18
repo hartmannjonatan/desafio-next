@@ -10,12 +10,11 @@ import { getGame } from '@/sanity/sanity.query';
 export default async function Home() {
   const games: GameType[] = await getGame();
   const destaque: GameType | undefined = games.pop()
-  console.log(games)
   return (
     <>
       <div className="text-center w-full" id='jogos'>
         {destaque != undefined ?
-          <div className={`${styles.card} w-full hidden md:block`} id='destaque'>
+          <div className={`${styles.card} w-full mb-5`} id='destaque'>
             <Link href={`/games/${destaque.slug.current}`}>
                 <Image alt={destaque.title} src={destaque.mainImage.image} width={1240} height={493}/>
             </Link>
