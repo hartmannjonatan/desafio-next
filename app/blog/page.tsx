@@ -11,7 +11,7 @@ import CardPost from '../ui/blog/card-post';
 export default async function Blog() {
   const posts: PostType[] = await getPost()
   const destaque: PostType | undefined = posts.pop()
-  const date: string | undefined = destaque?.publishedAt.toString() != undefined ? new Date(destaque?.publishedAt.toString()).toLocaleDateString("BR") : undefined
+  const date: string | undefined = destaque != undefined ? new Date(destaque?.publishedAt.toString()).toLocaleDateString("BR") : undefined
   return (
     <>
       <h1 className={`${press.className} font-sunrise text-center w-full text-2xl`}>BLOG</h1>

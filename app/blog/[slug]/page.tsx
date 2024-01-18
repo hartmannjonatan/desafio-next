@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default async function Post({ params }: { params: { slug: string } }) {
   const slug = params.slug;
   const post: PostType = await getSinglePost(slug)
-  const date: string | undefined = post.publishedAt.toString() != undefined ? new Date(post.publishedAt.toString()).toLocaleDateString("BR") : undefined
+  const date: string | undefined = post != undefined ? new Date(post.publishedAt.toString()).toLocaleDateString("BR") : undefined
   return (
     <>
       { post != undefined && post != null?
