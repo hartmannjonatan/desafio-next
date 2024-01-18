@@ -34,14 +34,15 @@ export async function getSinglePost(slug: string) {
 
 export async function getGame() {
     return client.fetch(
-      groq`*[_type == "game"]{
+      groq`*[_type == "game"] | order(_createdAt){
         _id,
         description,
         slug,
         mainImage {alt, "image": asset->url},
+        secondaryImage {alt, "image": asset->url},
         title,
         value
-      }`
+      }[0...4]`
     );
   }
 
@@ -52,6 +53,7 @@ export async function getSingleGame(slug: string) {
         description,
         slug,
         mainImage {alt, "image": asset->url},
+        secondaryImage {alt, "image": asset->url},
         title,
         value
         }`,

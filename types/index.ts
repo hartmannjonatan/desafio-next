@@ -20,8 +20,12 @@ export type PostType = {
 export type GameType = {
     _id: string,
   value: Number,
-  slug: string,
+  slug: Slug,
   mainImage: {
+    alt: string,
+    image: string
+  },
+  secondaryImage: {
     alt: string,
     image: string
   },

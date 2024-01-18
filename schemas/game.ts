@@ -33,6 +33,14 @@ export default defineType({
       },
     }),
     defineField({
+      name: 'secondaryImage',
+      title: 'Imagem secundária',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
       name: 'description',
       title: 'Descrição',
       type: 'text',

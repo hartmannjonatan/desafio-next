@@ -3,34 +3,35 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '@/app/ui/imagem-card.module.css'
 import CardCarreira from './ui/carreira/card-carreira';
+import { GameType } from '@/types';
+import { getGame } from '@/sanity/sanity.query';
 
 
-export default function Home() {
+export default async function Home() {
+  const games: GameType[] = await getGame();
+  const destaque: GameType | undefined = games.pop()
+  console.log(games)
   return (
     <>
       <div className="text-center w-full" id='jogos'>
-        <div className={`${styles.card} w-full hidden md:block`}>
-          <Link href={"/games/pacman"}>
-              <Image alt='Jogo Pacman' src={"/primaria-pacman.png"} width={1240} height={493}/>
-          </Link>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className={`${styles.card}`}>
-              <Link href={"/games/pacman"}>
-                  <Image alt='Jogo Pacman' src={"/secundaria-pacman.png"} width={400} height={300} />
-              </Link>
-            </div>
-            <div className={`${styles.card}`}>
-              <Link href={"/#"}>
-                <Image alt='Jogo Tetris' src={"/secundaria-tetris.png"} width={400} height={300} />
-              </Link>
-            </div>
-            <div className={`${styles.card}`}>
-              <Link href={"/#"}>
-                  <Image alt='Jogo Nave' src={"/secundaria-nave.png"} width={400} height={300} />
-              </Link>
-            </div>
-        </div>
+        {destaque != undefined ?
+          <div className={`${styles.card} w-full hidden md:block`} id='destaque'>
+            <Link href={`/games/${destaque.slug.current}`}>
+                <Image alt={destaque.title} src={destaque.mainImage.image} width={1240} height={493}/>
+            </Link>
+          </div>
+        : <h2 className={`${montserrat.className} font-white font-bold text-xl`}>Não há jogos cadastrados no momento</h2>}
+        {games.length > 0 ?
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:mt-3">
+              {games.map((game, i) => {
+                  return <div className={`${styles.card}`} key={i}>
+                          <Link href={`/games/${game.slug.current}`}>
+                              <Image alt={game.title} src={game.secondaryImage.image} width={400} height={300} />
+                          </Link>
+                        </div>
+              })}
+          </div>
+        : <></>}
       </div>
       <div className="w-full mt-14" id='sobre'>
         <h1 className={`${press.className} font-sunrise text-center w-full text-2xl`}>Sobre Nós</h1>
